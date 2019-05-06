@@ -1,0 +1,1 @@
+val x = {bar=(1+2, true andalso false), foo=2+4, baz=(false,9)}

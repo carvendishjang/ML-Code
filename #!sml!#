@@ -1,0 +1,447 @@
+Standard ML of New Jersey v110.79 [built: Sun Oct 04 15:55:10 2015]
+- use "hw3.sml";
+[opening hw3.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $SMLNJ-BASIS/(basis.cm):basis-common.cm is stable]
+[autoloading done]
+hw3.sml:39.38-39.63 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int -> char) * (char -> string * int)
+  operand:         (string * int -> char) * (char -> bool)
+  in expression:
+    String.sub o Char.isLower
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- use "hw3.sml";
+[opening hw3.sml]
+exception NoAnswer
+datatype pattern
+  = ConstantP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | VariableP of string
+  | WildcardP
+datatype valu
+  = Constant of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = AnythingT | DatatypeT of string | IntT | TupleT of typ list | UnitT
+val only_lowercase = fn : (string * int) list -> (string * int) list
+val it = () : unit
+- only_lowercase [sa,mm,Ka,ll,Ma];
+stdIn:2.29-2.31 Error: unbound variable or constructor: Ma
+stdIn:2.26-2.28 Error: unbound variable or constructor: ll
+stdIn:2.23-2.25 Error: unbound variable or constructor: Ka
+stdIn:2.20-2.22 Error: unbound variable or constructor: mm
+stdIn:2.17-2.19 Error: unbound variable or constructor: sa
+- only_lowercase ["ssa","ka","KKK"."sas","La"];
+stdIn:2.18 Error: syntax error found at DOT
+- only_lowercase ["ssa","ka","KKK","sas","La"];
+stdIn:1.2-2.30 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("ssa" :: "ka" :: "KKK" :: <exp> :: <exp>)
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:39.5-39.84 Error: duplicate variable in pattern(s): xs
+hw3.sml:39.42-39.84 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    (List.filter (Char.isLower o String.sub)) xs
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+use "hw3.sml";- 
+- ;
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:39.39-39.81 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    (List.filter (Char.isLower o String.sub)) xs
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- only_lowercase;
+val it = fn : (string * int) list -> (string * int) list
+- List.filter;
+val it = fn : ('a -> bool) -> 'a list -> 'a list
+- Char.isLower;
+val it = fn : char -> bool
+- String.sub;
+val it = fn : string * int -> char
+- use "hw3.sml";
+[opening hw3.sml]
+exception NoAnswer
+datatype pattern
+  = ConstantP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | VariableP of string
+  | WildcardP
+datatype valu
+  = Constant of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = AnythingT | DatatypeT of string | IntT | TupleT of typ list | UnitT
+val only_lowercase = fn : (string * int) list -> (string * int) list
+val it = () : unit
+- only_lowercase ["ssa","ka","KKK","sas","La"];
+stdIn:9.1-9.45 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("ssa" :: "ka" :: "KKK" :: <exp> :: <exp>)
+-String.sub; 
+- String.sub;
+val it = fn : string * int -> char
+- String.sub "xxs" 2;
+stdIn:11.1-11.19 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: string * int
+  operand:         string
+  in expression:
+    String.sub "xxs"
+- String.sub ("xss",1);
+val it = #"s" : char
+- String.sub ("abc",0);
+val it = #"a" : char.
+- String.sub "xss" 1;
+stdIn:13.1-13.19 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: string * int
+  operand:         string
+  in expression:
+    String.sub "xss"
+- String.sub "abc";
+stdIn:1.2-11.4 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: string * int
+  operand:         string
+  in expression:
+    String.sub "abc"
+- String.sub 1 "abc";
+stdIn:1.2-11.6 Error: operator and operand don't agree [overload conflict]
+  operator domain: string * int
+  operand:         [int ty]
+  in expression:
+    String.sub 1
+- only_lowercase;
+val it = fn : (string * int) list -> (string * int) list
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:39.76 Error: syntax error: inserting  RPAREN
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:39.5-41.44 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: string list
+  operand:         (string * int) list -> (string * int) list
+  in expression:
+    let val curry_inverse = let <dec> in <exp> end
+    in List.filter (Char.isLower o <exp> <exp>)
+    end only_lowercase
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:41.1-41.3 Error: unbound variable or constructor: xs
+hw3.sml:39.5-41.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("abc" :: "Dac" :: "mma" :: <exp> :: <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- String.sub;
+val it = fn : string * int -> char
+- curry_inverse;
+stdIn:15.1-15.14 Error: unbound variable or constructor: curry_inverse
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:41.1-41.3 Error: unbound variable or constructor: xs
+hw3.sml:39.5-41.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("abc" :: "Dac" :: "mma" :: <exp> :: <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- List.filter;
+val it = fn : ('a -> bool) -> 'a list -> 'a list
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:42.1-42.3 Error: unbound variable or constructor: xs
+hw3.sml:40.5-42.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("abc" :: "Dac" :: "mma" :: <exp> :: <exp>)
+hw3.sml:40.5-42.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (char list -> char list) * ('Z -> char list)
+  operand:         (char list -> char list) * bool
+  in expression:
+    List.filter Char.isLower o
+      ((curry_inverse <exp>) 0) <errorvar> =
+        only_lowercase ("abc" :: <exp> :: <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- curry_inverse
+= ;
+stdIn:1.2-16.1 Error: unbound variable or constructor: curry_inverse
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:42.1-42.3 Error: unbound variable or constructor: xs
+hw3.sml:40.5-42.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("abc" :: "Dac" :: "mma" :: <exp> :: <exp>)
+hw3.sml:40.5-42.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (char list -> char list) * ('Z -> char list)
+  operand:         (char list -> char list) * bool
+  in expression:
+    List.filter Char.isLower o
+      ((curry_inverse <exp>) 0) <errorvar> =
+        only_lowercase ("abc" :: <exp> :: <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:42.1-42.3 Error: unbound variable or constructor: xs
+hw3.sml:40.5-42.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("abc" :: "Dac" :: "mma" :: <exp> :: <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:42.1-42.3 Error: unbound variable or constructor: xs
+hw3.sml:40.5-42.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("abc" :: "Dac" :: "mma" :: <exp> :: <exp>)
+hw3.sml:40.5-42.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (char list -> char list) * ('Z -> char list)
+  operand:         (char list -> char list) * bool
+  in expression:
+    List.filter Char.isLower o
+      ((curry_inverse <exp>) 0) <errorvar> =
+        only_lowercase ("abc" :: <exp> :: <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:42.1-42.3 Error: unbound variable or constructor: xs
+hw3.sml:40.5-42.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("abc" :: "Dac" :: "mma" :: <exp> :: <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:42.1-42.3 Error: unbound variable or constructor: xs
+hw3.sml:40.5-42.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("abc" :: "Dac" :: "mma" :: <exp> :: <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- curry_inverse
+= '
+stdIn:18.1 Error: illegal token
+- curry_inverse;
+stdIn:1.2-16.1 Error: unbound variable or constructor: curry_inverse
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:42.1-42.3 Error: unbound variable or constructor: xs
+hw3.sml:40.51-40.77 Error: operator and operand don't agree [overload conflict]
+  operator domain: string
+  operand:         [int ty]
+  in expression:
+    (curry_inverse String.sub) 1
+hw3.sml:40.5-42.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("abc" :: "Dac" :: "mma" :: <exp> :: <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- curry_inverse;
+stdIn:1.2-16.1 Error: unbound variable or constructor: curry_inverse
+- curry_inverse;
+stdIn:1.2-16.1 Error: unbound variable or constructor: curry_inverse
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:40.51-40.64 Error: unbound variable or constructor: curry_inverse
+hw3.sml:42.1-42.3 Error: unbound variable or constructor: xs
+hw3.sml:40.5-42.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string * int) list
+  operand:         string list
+  in expression:
+    only_lowercase ("abc" :: "Dac" :: "mma" :: <exp> :: <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- curry;
+stdIn:1.2-10.5 Error: unbound variable or constructor: curry
+- use "hw3.sml";
+[opening hw3.sml]
+exception NoAnswer
+datatype pattern
+  = ConstantP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | VariableP of string
+  | WildcardP
+datatype valu
+  = Constant of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = AnythingT | DatatypeT of string | IntT | TupleT of typ list | UnitT
+val curry = fn : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val it = () : unit
+- curry;
+val it = fn : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+- use "hw3.sml";
+[opening hw3.sml]
+exception NoAnswer
+datatype pattern
+  = ConstantP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | VariableP of string
+  | WildcardP
+datatype valu
+  = Constant of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = AnythingT | DatatypeT of string | IntT | TupleT of typ list | UnitT
+val curry = fn : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val it = () : unit
+- use "hw3.sml";
+[opening hw3.sml]
+exception NoAnswer
+datatype pattern
+  = ConstantP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | VariableP of string
+  | WildcardP
+datatype valu
+  = Constant of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = AnythingT | DatatypeT of string | IntT | TupleT of typ list | UnitT
+val curry = fn : ('a * 'b -> 'c) -> 'b -> 'a -> 'c
+val it = () : unit
+- List.filter;
+val it = fn : ('a -> bool) -> 'a list -> 'a list
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:41.1 Error: syntax error found at EOF
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- use "hw3.sml";
+[opening hw3.sml]
+hw3.sml:41.1 Error: syntax error found at EOF
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:292.17-292.20
+- use "hw3.sml";
+[opening hw3.sml]
+exception NoAnswer
+datatype pattern
+  = ConstantP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | VariableP of string
+  | WildcardP
+datatype valu
+  = Constant of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = AnythingT | DatatypeT of string | IntT | TupleT of typ list | UnitT
+val curry = fn : ('a * 'b -> 'c) -> 'b -> 'a -> 'c
+val only_lowercase = fn : string list -> string list
+val it = () : unit
+- use "hw3.sml";
+[opening hw3.sml]
+exception NoAnswer
+datatype pattern
+  = ConstantP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | VariableP of string
+  | WildcardP
+datatype valu
+  = Constant of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = AnythingT | DatatypeT of string | IntT | TupleT of typ list | UnitT
+val curry = fn : ('a * 'b -> 'c) -> 'b -> 'a -> 'c
+val only_lowercase = fn : string list -> string list
+val m = ["abs","mas"] : string list
+val it = () : unit
+- e

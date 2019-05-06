@@ -1,0 +1,2 @@
+fun count (from : int, to : int)=
+    if from

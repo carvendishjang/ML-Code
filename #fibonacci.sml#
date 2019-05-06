@@ -1,0 +1,11 @@
+fun fib1 x =
+  if x = 0 then 0
+  else if x = 1 then 1
+  else fib1 (x-1) + fib1 (x-2)
+
+fun fib2 x = hd(mat_mult x [[1,1],[1,0]] [1,0])
+
+fun mat_mult x [a::b::[]. [c::d::[]]] [m,n] =
+  
+	       
+    
